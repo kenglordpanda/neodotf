@@ -1,0 +1,5 @@
+require("config.keybind")
+require("config.setting")
+require("config.lazy")
+require("config.hook")
+require("config.plugin_keybind")
