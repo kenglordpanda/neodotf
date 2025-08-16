@@ -1,4 +1,3 @@
--- his file is a catch all for mason and linting due to the order of setup
 return {
 	{
 		"mason-org/mason.nvim",
