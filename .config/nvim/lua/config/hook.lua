@@ -3,26 +3,6 @@
 -- Color Scheme
 vim.cmd.colorscheme("zenbones")
 
--- Telescope Extensions
-
-require("telescope").setup({
-	extensions = {
-		aerial = {
-			col1_width = 4,
-			col2_width = 30,
-			format_symbol = function(symbol_path, filetype)
-				if filetype == "json" or filetype == "yaml" then
-					return table.concat(symbol_path, ".")
-				else
-					return symbol_path[#symbol_path]
-				end
-			end,
-			-- Available modes: symbols, lines, both
-			show_columns = "both",
-		},
-	},
-})
-
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -77,3 +57,15 @@ require("lualine").setup({
 	inactive_winbar = {},
 	extensions = {},
 })
+
+require("mini.icons").setup()
+require("mini.align").setup()
+require("mini.move").setup()
+require("mini.pairs").setup()
+require("mini.surround").setup()
+require("mini.snippets").setup({
+	snippets = {
+		require("mini.snippets").gen_loader.from_lang(),
+	},
+})
+require("mini.completion").setup()
