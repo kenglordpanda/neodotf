@@ -21,5 +21,6 @@ return {
 				timeout_ms = 500,
 			},
 		},
+		config = function() end,
 	},
 }

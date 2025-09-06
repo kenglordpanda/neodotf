@@ -120,6 +120,6 @@ zstyle :compinstall filename '/home/snorlax/.zshrc'
 
 #$ End of lines added by compinstall
 #
-eval "$(oh-my-posh init zsh --config ~/.oh-my-posh/catppuccin_frappe.omp.json)"
+eval "$(starship init zsh)"
 eval "$(ssh-agent -s)"
 eval "$(fnm env --use-on-cd --shell zsh)"
