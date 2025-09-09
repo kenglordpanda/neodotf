@@ -1,4 +1,4 @@
-return {
+return({
 	{
 		"stevearc/conform.nvim",
 		opts = {
@@ -20,7 +20,9 @@ return {
 				lsp_fallback = true,
 				timeout_ms = 500,
 			},
+			log_level = vim.log.levels.ERROR,
+			notify_on_error = true,
+			notify_no_formatters = true,
 		},
-		config = function() end,
 	},
-}
+})

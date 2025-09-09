@@ -1,0 +1,36 @@
+# Prompt wide options
+format = """
+$username@$hostname
+$git_branch
+$character
+"""
+right_format = ''
+
+palette = 'panda'
+
+[palettes.panda]
+pink = '#FF13F0'
+
+
+[username]
+format = '[$user]($style)'
+disabled=false
+show_always=true
+
+[hostname]
+ssh_only = false
+ssh_symbol = '🕹️'
+format='[$hostname](pink bold italic) [$ssh_symbol](bold)'
+
+[git_branch]
+symbol = '🌿'
+truncation_symbol = '...'
+format = 'on [$symbol $branch(:%remote_branch)](bold)'
+
+[git_commit]
+
+[git_state]
+
+[git_metrics]
+
+[git_status]
