@@ -1,16 +1,15 @@
 # Prompt wide options
 format = """
-$username@$hostname
-$git_branch
-$character
+|$directory
+|$username@$hostname$fill$time
+|($git_status)($git_state)($git_branch$git_commit$git_metrics)$fill($nodejs)(|$golang)(|$rust)(|$python)(|$c)(|$cpp)
+⎣$character
 """
-right_format = ''
 
 palette = 'panda'
 
 [palettes.panda]
 pink = '#FF13F0'
-
 
 [username]
 format = '[$user]($style)'
@@ -25,12 +24,87 @@ format='[$hostname](pink bold italic) [$ssh_symbol](bold)'
 [git_branch]
 symbol = '🌿'
 truncation_symbol = '...'
-format = 'on [$symbol $branch(:%remote_branch)](bold)'
+format = 'on [$symbol $branch(:%remote_branch)](bold) '
 
 [git_commit]
+commit_hash_length=8
+format='on commit [\($hash$tag\)](bold) '
+only_detached=false
+tag_disabled=false
+tag_symbol='📌'
 
 [git_state]
+rebase = '🛠️'
+merge = '🧬'
+revert = '↺'
+cherry_pick = '🍒'
+bisect = '⌇'
+am = '✉️'
+am_or_rebase = '✉️/🛠️'
+style = ''
 
 [git_metrics]
+disabled=false
 
 [git_status]
+disabled=false
+ignore_submodules=true
+conflicted='⚔️'
+ahead='↪'
+behind='↩'
+diverged='🔗'
+up_to_date='✅'
+untracked='❌'
+stashed='🕋'
+modified='✏️'
+staged='🏟️'
+renamed='🔧'
+deleted='🗑️'
+typechanged=''
+
+[golang]
+symbol='🦫 '
+format='[$symbol($version)]($style)'
+version_format='v${major}.${minor}'
+disabled=false
+
+[rust]
+symbol='🦀 '
+format='[$symbol($version)]($style)'
+version_format='v${major}.${minor}'
+disabled=false
+
+[python]
+symbol='🐍 '
+format='[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+version_format='v${major}.${minor}'
+disabled=false
+
+[nodejs]
+format='[$symbol($version )]($style)'
+version_format='v${major}.${minor}'
+disabled=false
+
+[c]
+symbol='🇨 '
+format='[$symbol($version(-$name)]($style)'
+version_format='v${major}.${minor}'
+disabled=false
+
+[cpp]
+symbol='✙ '
+format='[$symbol($version(-$name)]($style)'
+version_format='v${major}.${minor}'
+disabled=false
+
+[time]
+format='[$time](bold green)'
+time_format='%Y-%m-%d %H:%M:%S.%3f'
+disabled=false
+
+[fill]
+disabled=false
+symbol=' '
+
+[directory]
+truncation_symbol='.../'
