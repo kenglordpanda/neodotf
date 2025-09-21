@@ -1,6 +1,7 @@
 return {
 	{
 		"numToStr/Fterm.nvim",
+		cond = not vim.g.vscode,
 		opts = {
 			vim.keymap.set(
 				"n",

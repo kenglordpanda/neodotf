@@ -19,7 +19,7 @@ show_always=true
 [hostname]
 ssh_only = false
 ssh_symbol = '🕹️'
-format='[$hostname](pink bold italic) [$ssh_symbol](bold)'
+format='[$hostname](green bold italic) [$ssh_symbol](bold)'
 
 [git_branch]
 symbol = '🌿'

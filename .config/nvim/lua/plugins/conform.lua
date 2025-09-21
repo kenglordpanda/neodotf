@@ -1,6 +1,7 @@
-return({
+return {
 	{
 		"stevearc/conform.nvim",
+		cond = not vim.g.vscode,
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
@@ -25,4 +26,4 @@ return({
 			notify_no_formatters = true,
 		},
 	},
-})
+}

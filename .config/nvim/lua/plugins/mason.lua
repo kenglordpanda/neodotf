@@ -1,10 +1,12 @@
 return {
 	{
 		"mason-org/mason.nvim",
+		cond = not vim.g.vscode,
 		opts = {},
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
+		cond = not vim.g.vscode,
 		opts = {
 			ensure_installed = {
 				"clangd",
@@ -15,12 +17,13 @@ return {
 			},
 		},
 		dependencies = {
-			{ "mason-org/mason.nvim", opts = {} },
+			{ "mason-org/mason.nvim", cond = not vim.g.vscode, opts = {} },
 			"neovim/nvim-lspconfig",
 		},
 	},
 	{
 		"mfussenegger/nvim-lint",
+		cond = not vim.g.vscode,
 		config = function()
 			local lint = require("lint")
 			lint.linters_by_ft = {

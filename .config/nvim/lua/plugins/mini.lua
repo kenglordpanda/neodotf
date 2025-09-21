@@ -1,6 +1,7 @@
 return {
 	{
 		"nvim-mini/mini.icons",
+		cond = not vim.g.vscode,
 		version = "*",
 		config = function()
 			require("mini.icons").setup()
@@ -8,6 +9,7 @@ return {
 	},
 	{
 		"nvim-mini/mini.completion",
+		cond = not vim.g.vscode,
 		version = "*",
 		config = function()
 			require("mini.completion").setup()
@@ -43,6 +45,7 @@ return {
 	},
 	{
 		"nvim-mini/mini.snippets",
+		cond = not vim.g.vscode,
 		version = "*",
 		dependencies = { "rafamadriz/friendly-snippets" },
 		config = function()

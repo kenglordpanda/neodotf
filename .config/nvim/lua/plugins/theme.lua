@@ -1,15 +1,108 @@
 return {
 	{
-		"projekt0n/github-nvim-theme",
-		name = "github-theme",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
+		"marko-cerovac/material.nvim",
+		cond = not vim.g.vscode,
+		priority = 1000,
+		lazy = false,
 		config = function()
-			require("github-theme").setup({
-				-- ...
-			})
+			require("material").setup({
 
-			vim.cmd("colorscheme github_dark_default")
+				contrast = {
+					terminal = false, -- Enable contrast for the built-in terminal
+					sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
+					floating_windows = false, -- Enable contrast for floating windows
+					cursor_line = false, -- Enable darker background for the cursor line
+					lsp_virtual_text = false, -- Enable contrasted background for lsp virtual text
+					non_current_windows = false, -- Enable contrasted background for non-current windows
+					filetypes = {}, -- Specify which filetypes get the contrasted (darker) background
+				},
+
+				styles = { -- Give comments style such as bold, italic, underline etc.
+					comments = { --[[ italic = true ]]
+					},
+					strings = { --[[ bold = true ]]
+					},
+					keywords = { --[[ underline = true ]]
+					},
+					functions = { --[[ bold = true, undercurl = true ]]
+					},
+					variables = {},
+					operators = {},
+					types = {},
+				},
+
+				plugins = { -- Uncomment the plugins that you use to highlight them
+					-- Available plugins:
+					-- "blink",
+					-- "coc",
+					-- "colorful-winsep",
+					-- "dap",
+					-- "dashboard",
+					-- "eyeliner",
+					-- "fidget",
+					-- "flash",
+					"gitsigns",
+					-- "harpoon",
+					-- "hop",
+					-- "illuminate",
+					-- "indent-blankline",
+					-- "lspsaga",
+					"mini",
+					-- "neo-tree",
+					-- "neogit",
+					-- "neorg",
+					-- "neotest",
+					-- "noice",
+					-- "nvim-cmp",
+					-- "nvim-navic",
+					-- "nvim-notify",
+					-- "nvim-tree",
+					-- "nvim-web-devicons",
+					-- "rainbow-delimiters",
+					-- "sneak",
+					-- "telescope",
+					"trouble",
+					"which-key",
+				},
+
+				disable = {
+					colored_cursor = false, -- Disable the colored cursor
+					borders = false, -- Disable borders between vertically split windows
+					background = true, -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
+					term_colors = true, -- Prevent the theme from setting terminal colors
+					eob_lines = false, -- Hide the end-of-buffer lines
+				},
+
+				high_visibility = {
+					lighter = false, -- Enable higher contrast text for lighter style
+					darker = false, -- Enable higher contrast text for darker style
+				},
+
+				lualine_style = "stealth", -- Lualine style ( can be 'stealth' or 'default' )
+
+				async_loading = true, -- Load parts of the theme asynchronously for faster startup (turned on by default)
+
+				custom_colors = nil, -- If you want to override the default colors, set this to a function
+
+				custom_highlights = {}, -- Overwrite highlights with your own
+			})
+			vim.g.material_style = "lighter"
+			vim.cmd.colorscheme("material")
 		end,
 	},
+	-- {
+	-- 	"sainnhe/everforest",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		-- Optionally configure and load the colorscheme
+	-- 		-- directly inside the plugin declaration.
+	--
+	-- 		vim.background = light
+	-- 		vim.g.everforest_enable_italic = true
+	-- 		vim.g.everforest_background = "hard"
+	-- 		vim.g.everforest_better_performance = 1
+	-- 		vim.cmd.colorscheme("everforest")
+	-- 	end,
+	-- },
 }

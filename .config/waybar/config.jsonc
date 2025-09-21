@@ -1,0 +1,121 @@
+// -*- mode: jsonc -*-
+[
+    {
+        "output": [
+            "DP-1"
+        ],
+        "name": "info_bar",
+        "layer": "bottom", // Waybar at top layer
+        "position": "top", // Waybar position (top|bottom|left|right)
+        "height": 12, // Waybar height (to be removed for auto height)
+        // "width": 1280, // Waybar width
+        "spacing": 4, // Gaps between modules (4px)
+        // Choose the order of the modules
+        "modules-center": [
+            "sway/window"
+        ]
+    },
+    {
+        "output": [
+            "DP-2"
+        ],
+        "name": "info_right",
+        "position": "top",
+        "height": 12, // Waybar height (to be removed for auto height)
+        // "width": 1280, // Waybar width
+        "spacing": 4, // Gaps between modules (4px)
+        // Choose the order of the modules
+        "modules-center": [
+            "sway/window"
+        ],
+        "modules-right": [
+            "idle_inhibitor",
+            "pulseaudio",
+            "battery",
+            "clock"
+        ],
+        // Modules configuration
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "activated": "",
+                "deactivated": ""
+            }
+        },
+        "clock": {
+            "timezone": "America/Chicago",
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+            "format-alt": "{:%Y-%m-%d}"
+        },
+        "cpu": {
+            "format": "{usage}% ",
+            "tooltip": false
+        },
+        "memory": {
+            "format": "{}% "
+        },
+        "battery": {
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "{capacity}% {icon}",
+            "format-full": "{capacity}% {icon}",
+            "format-charging": "{capacity}% ",
+            "format-plugged": "{capacity}% ",
+            "format-alt": "{time} {icon}",
+            "format-good": "", // An empty format will hide the module
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        "pulseaudio": {
+            "scroll-step": 1, // %, can be a float
+            "format": "{volume}% {icon} {format_source}",
+            "format-bluetooth": "{volume}% {icon} {format_source}",
+            "format-bluetooth-muted": " {icon} {format_source}",
+            "format-muted": " {format_source}",
+            "format-source": "{volume}% ",
+            "format-source-muted": "",
+            "format-icons": {
+                "headphone": "",
+                "hands-free": "",
+                "headset": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": [
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "on-click": "pavucontrol"
+        }
+    },
+    {
+        "name": "ws_bar",
+        "position": "bottom",
+        "height": 12,
+        "modules-center": [
+            "sway/workspaces"
+        ],
+        "sway/workspaces": {
+            "all-outputs": false,
+            "disable-scroll": true,
+            "warp-on-scroll": false,
+            "format": "{name}{icon}",
+            "format-icons": {
+                "focused": "●",
+                "urgent": "🚨",
+                "presistent": "📌",
+                "default": ""
+            }
+        }
+    }
+]

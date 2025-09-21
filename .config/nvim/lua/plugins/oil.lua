@@ -1,6 +1,7 @@
 return {
 	{
 		"stevearc/oil.nvim",
+		cond = not vim.g.vscode,
 		use_defaults_keymaps = false,
 		opts = {
 			view_options = {
