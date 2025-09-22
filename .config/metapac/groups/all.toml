@@ -36,7 +36,6 @@ arch = [
     "openssh",
     "os-prober",
     "paru",
-    "paru-debug",
     "pavucontrol",
     "pipewire-audio",
     "pipewire-pulse",
@@ -72,6 +71,6 @@ arch = [
     "xdg-desktop-portal-gtk",
     "xdg-desktop-portal-wlr",
     "zig",
-    "zsh",
+    "zsh", "gnupg", "pinentry",
 ]
 
