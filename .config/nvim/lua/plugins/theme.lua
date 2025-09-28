@@ -75,7 +75,7 @@ return {
 
 				high_visibility = {
 					lighter = false, -- Enable higher contrast text for lighter style
-					darker = false, -- Enable higher contrast text for darker style
+					darker = true, -- Enable higher contrast text for darker style
 				},
 
 				lualine_style = "stealth", -- Lualine style ( can be 'stealth' or 'default' )
@@ -86,7 +86,7 @@ return {
 
 				custom_highlights = {}, -- Overwrite highlights with your own
 			})
-			vim.g.material_style = "lighter"
+			vim.g.material_style = "darker"
 			vim.cmd.colorscheme("material")
 		end,
 	},
