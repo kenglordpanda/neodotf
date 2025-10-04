@@ -30,7 +30,7 @@ arch = [
   { package = "interception-caps2esc", hooks = { after_install = [
     "sudo",
     "cp",
-    "~/.dotfiles/udevmon/udevmon.yaml",
+    "~/.udevmon/udevmon.yaml",
     "/etc/interception/udevmon.yaml",
   ], after_sync = [
     "sudo",

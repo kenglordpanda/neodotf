@@ -1,4 +1,8 @@
-enabled_backends = ["arch"]
+enabled_backends = ["arch", "dnf"]
 
 [arch]
 package_manager = "paru"
+
+[hostname_groups]
+Jhin = ["jhin"]
+Sivir = ["sivir"]
