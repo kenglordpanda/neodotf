@@ -14,13 +14,17 @@ return {
 	---@type obsidian.config
 	opts = {
 		workspaces = {
-			{
-				name = "work",
-				path = "~/vaults/work",
-			},
+			-- {
+			-- 	name = "work",
+			-- 	path = "~/vaults/work",
+			-- },
 			{
 				name = "research",
 				path = "~/vaults/research",
+			},
+			{
+				name = "class",
+				path = "~/vaults/class",
 			},
 		},
 

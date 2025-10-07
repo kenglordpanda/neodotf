@@ -4,5 +4,5 @@ enabled_backends = ["arch", "dnf"]
 package_manager = "paru"
 
 [hostname_groups]
-Jhin = ["jhin"]
-Sivir = ["sivir"]
+Jhin = ["arch_base"]
+Sivir = ["arch_base"]
