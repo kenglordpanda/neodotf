@@ -1,3 +1,5 @@
 -- This file should contain functions that should be run after lazy is setup
 -- Functions that are just calling require(...).setup({opts}) should be configured
 -- either by using the lazy config = function() ... end or with the opts var.
+
+vim.cmd.colorscheme("dracula")

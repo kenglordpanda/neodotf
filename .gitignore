@@ -1,2 +1,3 @@
 .local/share/fonts/Berkeley*
 .background/
+**/tmux/plugins
