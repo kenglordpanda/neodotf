@@ -1,0 +1,8 @@
+enabled_backends = ["arch"]
+
+[arch]
+package_manager = "paru"
+
+[hostname_groups]
+Jhin = ["arch_base"]
+tsukuyomi = ["arch_base"]
