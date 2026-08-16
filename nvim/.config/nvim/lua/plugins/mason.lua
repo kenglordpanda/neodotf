@@ -27,7 +27,6 @@ return {
 				"ts_ls",
 				"taplo",
 				"yamlls",
-				"zls",
 			},
 		},
 		dependencies = {

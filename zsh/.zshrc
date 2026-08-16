@@ -144,3 +144,15 @@ zstyle :compinstall filename '/home/snorlax/.zshrc'
 eval "$(starship init zsh)"
 eval "$(ssh-agent -s)"
 eval "$(fnm env --use-on-cd --shell zsh)"
+
+# pnpm
+export PNPM_HOME="/home/renei/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

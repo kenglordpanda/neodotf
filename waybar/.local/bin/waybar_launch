@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# 1. Kill all instances (SIGTERM first is cleaner, then SIGKILL if needed)
+pkill -x waybar
+
+# 2. Wait for processes to actually disappear
+while pgrep -u $UID -x waybar > /dev/null; do 
+    sleep 0.2
+done
+
+# 3. Use direct execution or ensure SWAYSOCK is available
+# If swaymsg fails, it's often better to just run the binary directly
+if [ -n "$SWAYSOCK" ]; then
+    swaymsg exec waybar
+else
+    # Fallback to direct execution in the background
+    waybar &
+fi
+
+echo "Waybar launched"

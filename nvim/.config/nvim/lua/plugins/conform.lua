@@ -18,7 +18,6 @@ return {
 				rust = { "rustfmt", lsp_format = "fallback" },
 				yaml = { "yamlfmt", stop_after_first = true },
 				toml = { "taplo" },
-				zig = { lsp_format = "fallback" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
